@@ -17,3 +17,7 @@ GROUP BY machine_id
 )
 Select machine_id , 
 ROUND(processi_time,3) AS processing_time FROM AVG_table;
+
+
+
+--SELECT a1.machine_id, AVG(a1.timestamp-a2.timestamp) AS processing_time FROM Activity a1 JOIN Activity a2 ON a1.machine_id=a2.machine_id and a1.process_id=a2.process_id and a1.activity_type='end' and a2.activity_type='start' GROUP BY a1.machine_id
